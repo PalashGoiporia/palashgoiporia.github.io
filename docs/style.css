@@ -1,28 +1,128 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    font-family: "Avenir Next", "Segoe UI", sans-serif;
+    background:
+        radial-gradient(circle at top left, rgba(234, 179, 8, 0.18), transparent 28%),
+        linear-gradient(180deg, #f7f1e8 0%, #efe5d6 100%);
+    color: #1f2937;
     margin: 0;
-    padding: 20px;
+    min-height: 100vh;
+}
+
+.page-shell {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 28px 20px 48px;
+}
+
+.site-header {
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 40px;
+}
+
+.brand-link,
+.site-nav a {
+    color: #1f2937;
+    text-decoration: none;
+    letter-spacing: 0.04em;
+}
+
+.brand-link {
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.site-nav {
+    display: flex;
+    gap: 18px;
+    flex-wrap: wrap;
     align-items: center;
 }
 
-.resume-container {
+.site-nav a {
+    font-size: 0.95rem;
+    font-weight: 600;
+    padding-bottom: 3px;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.2s ease, opacity 0.2s ease;
+}
+
+.site-nav a:hover,
+.site-nav a[aria-current="page"] {
+    border-color: #b45309;
+}
+
+.hero-card,
+.cv-container {
     width: 100%;
-    max-width: 900px;
-    background: white;
-    padding: 20px;
-    box-shadow: 0 0 15px rgba(0,0,0,0.1);
-    border-radius: 8px;
+    max-width: 920px;
+    background: rgba(255, 252, 247, 0.9);
+    padding: 40px;
+    box-shadow: 0 20px 60px rgba(120, 96, 57, 0.14);
+    border: 1px solid rgba(120, 96, 57, 0.12);
+    border-radius: 24px;
+    backdrop-filter: blur(10px);
 }
 
 h1 {
-    text-align: center;
-    color: #333;
+    margin: 0 0 18px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(2.6rem, 6vw, 4.8rem);
+    line-height: 0.98;
+    color: #111827;
+}
+
+.eyebrow {
+    margin: 0 0 14px;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #92400e;
+}
+
+.lead {
+    max-width: 720px;
+    margin: 0 0 16px;
+    font-size: 1.18rem;
+    line-height: 1.7;
+}
+
+.body-copy {
+    max-width: 720px;
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #4b5563;
 }
 
 object {
+    margin-top: 24px;
     border: 1px solid #ccc;
-    border-radius: 4px;
+    border-radius: 16px;
+    background: #fff;
+}
+
+@media (max-width: 640px) {
+    .page-shell {
+        padding: 20px 14px 32px;
+    }
+
+    .site-header {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 28px;
+    }
+
+    .site-nav {
+        justify-content: flex-start;
+    }
+
+    .hero-card,
+    .cv-container {
+        padding: 24px;
+        border-radius: 18px;
+    }
 }
